@@ -19,6 +19,7 @@ class APIMiddleware implements Middleware
         if ($apiKey && $apiKey == self::API_KEY) {
             return $handler->handle($request);
         }
+
         $responseFactory = new ResponseFactory();
         return $responseFactory
             ->createResponse()

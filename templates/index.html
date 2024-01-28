@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Email Application</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="header">
+            <div id="logo">
+                <h1>LOGO</h1>
+                <H1>Best email messaging app ever</H1>
+            </div>
+        </div>
+
+        <div id="welcomeSection" class="p-3">
+            <p>Welcome text</p>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="location.href='/send-email'" class="btn btn-primary">Create New Email</button>
+            <button onclick="location.href='/local-storage'" class="btn btn-secondary">Emails Saved in Local
+                Storage</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // No need for separate functions since inline onclick handlers are being used
+    </script>
+
+</body>
+
+</html>
