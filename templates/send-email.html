@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
     <title>Email Application - Send Email</title>
-    <link rel="stylesheet" href="./css/style.css" />
 </head>
-
 <body>
-    <div class="nav-container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+<div class="nav-container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="/">Home</a>
-                    <a class="nav-item nav-link" href="/local-storage">Local storage</a>
-                    <a class="nav-item nav-link" href="/send-email">Send Mail</a>
-                </div>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/local-storage">Local storage</a>
+                <a class="nav-item nav-link" href="/send-email">Send Mail</a>
             </div>
-        </nav>
-    </div>
-    <div class="container mt-5">
-        <h2>Create New Email</h2>
+        </div>
+    </nav>
+</div>
+<div class="container mt-5">
+    <h2>Create New Email</h2>
 
-        <form id="emailForm">
-            <div class="form-group">
-                <label for="subject">Subject:</label>
-                <input type="text" class="form-control" id="subject" required>
-            </div>
-            <div class="form-group">
-                <label for="recipient">Recipient:</label>
-                <input type="email" class="form-control" id="recipient" required>
-            </div>
-            <div class="form-group">
-                <label for="cc">CC:</label>
-                <input type="email" class="form-control" id="cc" required>
-            </div>
-            <div class="form-group">
-                <label for="body">Body:</label>
-                <textarea class="form-control" id="body" rows="4" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="attachments">Attachments:</label>
-                <input type="file" class="form-control-file" id="attachments">
-            </div>
-            <button type="button" class="btn btn-primary" onclick="sendEmail()">Send Email</button>
-        </form>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
-    <script>
-        // Your JavaScript code for handling the functionality goes here
-        // For simplicity, I'm providing a placeholder function for sending emails
-
-        function sendEmail() {
-            // Placeholder function for sending email
-            alert('Email sent!'); // You can replace this with actual functionality
-        }
-
-        // Additional JavaScript logic for handling UI interactions and making AJAX calls can be added here
-    </script>
-
+    <form id="emailForm">
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" class="form-control" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+            <label for="to">Recipient:</label>
+            <input type="email" class="form-control" id="to" name="to" required>
+        </div>
+        <div class="form-group">
+            <label for="cc">CC:</label>
+            <input type="email" class="form-control" id="cc" name="cc" required>
+        </div>
+        <div class="form-group">
+            <label for="body">Body:</label>
+            <textarea class="form-control" id="body" rows="4" name="body" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="attachments">Attachments:</label>
+            <input type="file" class="form-control-file" id="attachments">
+        </div>
+        <button type="submit" class="btn btn-primary">Send Email</button>
+    </form>
+</div>
+<script>
+    const form = document.querySelector("#emailForm");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        $.ajax({
+            url:         "/api/sendEmail",
+            data:        formData,
+            cache:       false,
+            processData: false,
+            contentType: false,
+            type:        'POST',
+            beforeSend:  function (request) {
+                request.setRequestHeader("Api-Key", "29d2a52d9bfb178dde9d386ad87c7297e3a2e2e757e1252195b09086dc0ab98b");
+            },
+            success:     function (data) {
+                console.log(data);
+            },
+            error:       function (data) {
+                console.log(data);
+            }
+        });
+    });
+</script>
 </body>
-
 </html>
