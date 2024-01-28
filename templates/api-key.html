@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>API Key Check</title>
-    <style>
-        #logo {
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #000;
-        }
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-        }
-        .input-group {
-            margin-bottom: 20px;
-        }
-        #verifyButton {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #000;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
 </head>
+
 <body>
-
-<div class="container mt-5">
-    <div id="logo">
-        <h1>LOGO</h1>
+    <div class="nav-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="/">Home</a>
+                    <a class="nav-item nav-link" href="/local-storage">Local storage</a>
+                    <a class="nav-item nav-link" href="/send-email">Send Mail</a>
+                </div>
+            </div>
+        </nav>
     </div>
-    
-    <label for="apiKeyInput">Vložte API klíč</label>
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" id="apiKeyInput" placeholder="input field" aria-label="API Key" aria-describedby="basic-addon2">
-    </div>
-    <button id="verifyButton" class="btn btn-primary" type="button" onclick="verifyKey()">Potvrdit</button>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="container mt-5">
+        <div id="api-logo">
+            <h1>LOGO</h1>
+        </div>
+
+        <label for="apiKeyInput">Vložte API klíč</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="apiKeyInput" placeholder="input field" aria-label="API Key"
+                aria-describedby="basic-addon2">
+        </div>
+        <button id="verifyButton" class="btn btn-primary" type="button" onclick="verifyKey()">Potvrdit</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 </body>
+
 </html>

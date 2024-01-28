@@ -5,11 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css" />
     <title>Email Application</title>
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
+    <div class="nav-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="/">Home</a>
+                    <a class="nav-item nav-link" href="/local-storage">Local storage</a>
+                    <a class="nav-item nav-link" href="/send-email">Send Mail</a>
+                </div>
+            </div>
+        </nav>
+    </div>
 
     <div class="container">
         <div id="header">
@@ -24,8 +40,8 @@
         </div>
 
         <div class="action-buttons">
-            <button onclick="location.href='/send-email'" class="btn btn-primary">Create New Email</button>
-            <button onclick="location.href='/local-storage'" class="btn btn-secondary">Emails Saved in Local
+            <button onclick="location.href='email-send.html'" class="btn btn-primary">Create New Email</button>
+            <button onclick="location.href='saved-emails.html'" class="btn btn-secondary">Emails Saved in Local
                 Storage</button>
         </div>
     </div>

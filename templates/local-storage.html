@@ -1,41 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Emails Saved in Local Storage</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
 </head>
+
 <body>
-
-<div class="container mt-5">
-    <div class="text-center">
-        <h1>LOGO</h1>
-    </div>
-    <h2 class="text-center mt-3">Mails saved in local storage</h2>
-    
-    <div id="emailList" class="list-group">
-        <!-- Example email item -->
-        <div class="email-item list-group-item">
-            <div class="row">
-                <div class="col">Od: sender@example.com</div>
-                <div class="col">Komu: receiver@example.com</div>
-                <div class="col">Předmět: Subject Line Here</div>
+    <div class="nav-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="/">Home</a>
+                    <a class="nav-item nav-link" href="/local-storage">Local storage</a>
+                    <a class="nav-item nav-link" href="/send-email">Send Mail</a>
+                </div>
             </div>
-        </div>
-        <!-- Repeat for each email -->
-        <!-- Placeholder for other emails -->
-        <!-- ... -->
+        </nav>
     </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    // You can later populate this with JavaScript to dynamically create the list items
-    // based on the data retrieved from local storage.
-</script>
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1>LOGO</h1>
+        </div>
+        <h2 class="text-center mt-3">Mails saved in local storage</h2>
+
+        <div id="emailList" class="list-group">
+            <!-- Example email item -->
+            <div class="email-item list-group-item">
+                <div class="row">
+                    <div class="col">Od: sender@example.com</div>
+                    <div class="col">Komu: receiver@example.com</div>
+                    <div class="col">Předmět: Subject Line Here</div>
+                </div>
+            </div>
+            <!-- Repeat for each email -->
+            <!-- Placeholder for other emails -->
+            <!-- ... -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // You can later populate this with JavaScript to dynamically create the list items
+        // based on the data retrieved from local storage.
+    </script>
 
 </body>
+
 </html>
