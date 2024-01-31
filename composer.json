@@ -1,7 +1,7 @@
 {
     "name": "vse/mailer-project",
     "require": {
-        "php": "8.2.4",
+        "php": ">=8",
         "ext-json": "*",
         "davidepastore/slim-validation": "^3.0",
         "monolog/monolog": "^2.9",

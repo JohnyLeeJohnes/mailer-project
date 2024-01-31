@@ -10,6 +10,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 class SendEmailAction extends Action
 {
+    /**
+     * @return Response
+     * @throws \PHPMailer\PHPMailer\Exception
+     */
     protected function action(): Response
     {
         //Validate data from Form
@@ -29,11 +33,11 @@ class SendEmailAction extends Action
             $mailer->mailer->addCC($formData['cc']);
         }
 
-        try{
+        try {
             //Send email & handle error
             $mailer->mailer->send();
             return $this->respond(new ActionPayload(200, ['message' => 'OK']));
-        } catch (Exception){
+        } catch (Exception) {
             return $this->respond(new ActionPayload(400, ['message' => 'ERROR']));
         }
     }
