@@ -41,7 +41,8 @@ const sendEmail        = (emailObject, index) => {
         contentType: false,
         type:        'POST',
         beforeSend:  function (request) {
-            request.setRequestHeader("Api-Key", "29d2a52d9bfb178dde9d386ad87c7297e3a2e2e757e1252195b09086dc0ab98b");
+            const apiKey = JSON.parse(localStorage.getItem("API_KEY"))
+            request.setRequestHeader("Api-Key", apiKey);
         },
         success:     function () {
             const storedFormData = JSON.parse(localStorage.getItem('UNSENT_EMAIL')) || [];
