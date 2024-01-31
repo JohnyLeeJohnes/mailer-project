@@ -28,6 +28,9 @@ return function (App $app) {
     $app->get('/local-storage', function (Request $request, Response $response) use ($renderer) {
         return $renderer->render($response, 'local-storage.html');
     });
+    $app->get('/api-key', function (Request $request, Response $response) use ($renderer) {
+        return $renderer->render($response, 'api-key.html');
+    });
 
     //REST API
     $app->post('/api/sendEmail', SendEmailAction::class)
