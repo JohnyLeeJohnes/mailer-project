@@ -1,3 +1,6 @@
+const restApiUrl      = 'http://tvujserver.com/api/sendEmail';
+const localStorageKey = 'UNSENT_EMAIL';
+
 async function limitedFunction() {
     let isRunning      = true;
     let timeoutReached = false;
@@ -18,7 +21,7 @@ async function limitedFunction() {
 }
 
 const getAndSendEmails = async () => {
-    const storage = JSON.parse(localStorage.getItem('UNSENT_EMAIL'));
+    const storage = JSON.parse(localStorage.getItem(localStorageKey));
     if (storage) {
         for (const email of storage) {
             sendEmail(email, storage.indexOf(email));
@@ -34,7 +37,7 @@ const sendEmail        = (emailObject, index) => {
     formData.set('subject', emailObject.subject);
     formData.set('body', emailObject.body);
     return $.ajax({
-        url:         "/api/sendEmail",
+        url:         restApiUrl,
         data:        formData,
         cache:       false,
         processData: false,
@@ -45,9 +48,9 @@ const sendEmail        = (emailObject, index) => {
             request.setRequestHeader("Api-Key", apiKey);
         },
         success:     function () {
-            const storedFormData = JSON.parse(localStorage.getItem('UNSENT_EMAIL')) || [];
+            const storedFormData = JSON.parse(localStorage.getItem(localStorageKey)) || [];
             storedFormData.splice(index, 1);
-            localStorage.setItem('UNSENT_EMAIL', JSON.stringify(storedFormData));
+            localStorage.setItem(localStorageKey, JSON.stringify(storedFormData));
             console.log("SUCCESS!");
         },
         error:       function () {

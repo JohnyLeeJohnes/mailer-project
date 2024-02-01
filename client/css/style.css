@@ -6,7 +6,6 @@ body {
 
 #header {
     width: 100%;
-    /* Full width */
     padding: 20px;
     border-bottom: 2px solid #dee2e6;
 }
@@ -21,35 +20,32 @@ body {
 
 #logo h1 {
     margin: 0 10px;
-    /* Add spacing between the two h1 elements */
+
 }
 
 #welcomeSection {
     width: 100%;
-    /* Full width */
     text-align: center;
-    /* Center text */
     margin: 20px 0;
     font-size: 50px;
 }
 
 .action-buttons {
     width: 100%;
-    /* Full width */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center buttons */
     margin-top: 20px;
 }
 
 .action-buttons button {
     width: 50%;
-    /* Adjust the width as desired */
     margin-bottom: 10px;
 }
 
+
 /* send-email */
+
 #emailList {
     border: 1px solid #000;
     margin-top: 20px;
@@ -62,6 +58,7 @@ body {
 .email-item:last-child {
     border-bottom: none;
 }
+
 
 /*Api key */
 

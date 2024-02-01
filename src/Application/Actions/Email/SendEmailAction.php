@@ -24,7 +24,7 @@ class SendEmailAction extends Action
 
         //Create new Mail
         $mailer = new Mailer();
-        $mailer->mailer->setFrom('pavlat2@spsejecna.cz', 'Jan Pavlát');
+        $mailer->mailer->setFrom('vana4@spsejecna.cz', 'Martin Váňa');
         $mailer->mailer->addAddress($formData['to']);
         $mailer->mailer->Subject = $formData['subject'];
         $mailer->mailer->Body = $formData['body'];

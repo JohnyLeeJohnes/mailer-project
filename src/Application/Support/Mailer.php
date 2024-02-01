@@ -17,7 +17,7 @@ class Mailer
         $this->mailer->Host = 'smtp.office365.com';
         $this->mailer->SMTPSecure = 'tls';
         $this->mailer->SMTPAuth   = true;
-        $this->mailer->Username = 'pavlat2@spsejecna.cz';
+        $this->mailer->Username = 'vana4@spsejecna.cz';
         $this->mailer->Password = '';
         $this->mailer->Port = 587;
         $this->mailer->SMTPOptions = [
