@@ -18,7 +18,7 @@ class Mailer
         $this->mailer->SMTPSecure = 'tls';
         $this->mailer->SMTPAuth   = true;
         $this->mailer->Username = 'vana4@spsejecna.cz';
-        $this->mailer->Password = '';
+        $this->mailer->Password = 'MikuNato12';
         $this->mailer->Port = 587;
         $this->mailer->SMTPOptions = [
             'ssl' => [
